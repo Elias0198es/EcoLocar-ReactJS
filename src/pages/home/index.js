@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export const Home = () => {
+export const HomePage = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
