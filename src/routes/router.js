@@ -8,7 +8,6 @@ import {CompaniesPage} from "../pages/companies";
 import {TransparencyPage} from "../pages/transparency";
 import {PeoplePage} from "../pages/people";
 
-
 export const PagesRoutes = () => {
     return (
         <BrowserRouter>
