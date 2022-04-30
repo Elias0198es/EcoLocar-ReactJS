@@ -1,0 +1,152 @@
+html {
+    background-color: #147A2B;
+}
+
+* {
+    margin: 0px
+  }
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 5em;
+    background-color: #147A2B;
+    background-image:
+    url('/src/assets/floresta5.png'),
+    linear-gradient(to bottom, #147A2B, #147a2c00);
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:10px 80px 80px 80px;
+    width: 70%;
+    color: #0C581C;
+    background-color: #DFE6CB;
+    border: 1px solid #DFE6CB;
+    border-radius: 16px;
+}
+
+input {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #DFE6CB;
+    border-radius: 16px;
+    font-style: italic;
+    display: inline-block;
+}
+
+.input-title {
+    font-family: 'Farro', sans-serif;
+    font-weight: normal;
+    padding: 20px;
+}
+
+.signup-link {
+    color: #0C581C;
+}
+
+.signup-link a, a:hover, a:focus {
+    color: #9B9E11;
+    text-decoration: none;
+}
+
+button {
+    background-color: #EDD929;
+    padding: 15px 30px;
+    border: 1px solid #DFE6CB;
+    border-radius: 16px;
+    color: #08460D;
+    font-family: 'Farro', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.banner-container img {
+    margin-top: 80px;
+    width: 80%;
+    height: auto;
+    background-image: url('../../assets/Banner.png');
+}
+
+select {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #DFE6CB;
+    border-radius: 16px;
+    font-style: italic;
+}
+
+.signup-input-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+label {
+    width: 100px;
+      display: inline-block;
+}
+
+.input-div {
+    display: inline-block;
+    float: left;
+    width: 33%;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.input-div-cep {
+    display: inline-block;
+    float: left;
+    width: 33%;
+    margin-right: 500px;
+}
+
+.checkbox-label {
+    float: left;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+.checkmark {
+    position: relative;
+    height: 25px;
+    width: 15px;
+    background-color: #0C581C;
+    border-radius: 50%;
+}
+
+input:checked ~ .checkmark {
+    background-color: #fff;
+}
+
+.checkmark:after {
+    top: 9px;
+   left: 9px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: #0C581C;
+}
+
+input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+.error {
+    color: red;
+    position: absolute;
+}
