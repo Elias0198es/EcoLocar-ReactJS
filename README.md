@@ -17,7 +17,7 @@ A Urihi faz a conexão de pessoas e grandes empresas com os donos de imoveis rur
 
 ### Pitch
 
-🧑‍ 💼Pitch da proposta (linkd do pitch)
+💼 Pitch da proposta (linkd do pitch)
 
 ## Como construimos
 Com o figma fizemos o brainstorm e o fluxo do processo, fluxo de telas, design e identidade visual, para construção do site utilizamos fizemos o versionamento no git/GitHub com as liguagens html, css, javascript e as libs do react.js, no back end utilizamos o Heroku, e typescript
