@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+![Logo-Urihi](https://user-images.githubusercontent.com/80185325/166112768-5d2c1347-a270-496a-93fc-9df6c609b91c.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Urihi - Preservando a Terra-Floresta
+Todos nós somos inquilinos neste planeta,por isso seja um morador consciente.
+A Urihi é uma plataforma que une os donos de areas rurais da Amazonia com empresas preoucpadas com o meio ambiente gerando valor para ambas as partes e assegurando que 
+a amazonia seja preservada e reflorestada
 
-## Available Scripts
+![urihi-home](https://user-images.githubusercontent.com/80185325/166113062-0b4a568b-d5b2-4be1-8b76-1c28703abd96.png)
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+📺 Um video curto para mostrar o fluxo da nossa plataforma (link da aoresentação do site)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## O que faz
+A Urihi faz a conexão de pessoas e grandes empresas com os donos de imoveis rurais, para a preservação e reflorestamento gerando valor para as empresas através do credito de carbono e na preservação e reflorestamento da Amazônia propriamente dito, esse investimento será distribuído em forma de aluguel para os proprietários, custos de reflorestamento e para o monitoramento das atividades via satélite e varreduras de drones que vão gerar relatórios periódicos.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+### Pitch
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🧑‍ 💼Pitch da proposta (linkd do pitch)
 
-### `npm run build`
+## Como construimos
+Com o figma fizemos o brainstorm e o fluxo do processo, fluxo de telas, design e identidade visual, para construção do site utilizamos fizemos o versionamento no git/GitHub com as liguagens html, css, javascript e as libs do react.js, no back end utilizamos o Heroku, e typescript
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## O que vem ai na Urihi
+O que vem agora para nosso projeto é uma elaboração completa de pesquisa de mercado e gestão de negocios e aperfeiçoamento da parte do monitoração das areas utilizando as mais novas tecnologias disponíveis.
