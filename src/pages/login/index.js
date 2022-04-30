@@ -3,10 +3,13 @@ import Input from '../../components/Input'
 import Button from '../../components/Button'
 import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
+import BannerLogin from '../../assets/Banner.png'
+
+import './login.css'
 
 
 const LoginPage = () => {
-  
+
   const { login } = useAuth()
   const navigate = useNavigate()
 
@@ -17,13 +20,13 @@ const LoginPage = () => {
   console.log('LOGIN-STATE', email, password, error)
 
   const handleLogin = () => {
-    if(!email | !password) {
+    if (!email | !password) {
       setError("Preencha todos os campos corretamente!")
       return
     }
 
     const res = login(email, password)
-    if(res) {
+    if (res) {
       setError(res)
       return
     }
@@ -34,9 +37,9 @@ const LoginPage = () => {
 
   return (
     <div className='login-container'>
-      <div>
-      <h1>Login</h1>
-      </div>
+
+      <div className='input-container'>
+        <h2 className='input-title'>Login</h2>
         <div>
           <Input
             type="email"
@@ -55,13 +58,18 @@ const LoginPage = () => {
             Text="Entrar"
             onClick={handleLogin}
           />
-          <div>
+          <div className='login-link'>
             Não tem conta?
             <strong>
               <Link to="/sign">&nbsp;Registre-se</Link>
             </strong>
           </div>
         </div>
+      </div>
+
+      <div className='banner-container'>
+      <img src={BannerLogin} alt="banner" />
+      </div>
     </div>
   );
 };
