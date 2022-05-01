@@ -7,11 +7,13 @@ import { Image } from 'mui-image'
 import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
-// coment-line
+import { useNavigate } from 'react-router-dom';
 
 export default function LabTabs() {
-    
+  
   const [value, setValue] = React.useState('1');
+
+  const navigate = useNavigate()
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -52,8 +54,8 @@ export default function LabTabs() {
             </TabList>
 
             <Box sx={{ mr: 3, width: '17vw', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
-                <Button variant="contained" style={{ color: "black", backgroundColor: "#EDD929", borderRadius: 50 }}>Login</Button>
-                <Button variant="contained"  style={{ color: "black", backgroundColor: "#EDD929", borderRadius: 50 }}>Cadastre-se</Button>
+                <Button onClick={() => { navigate('/login') }} variant="contained" style={{ color: "black", backgroundColor: "#EDD929", borderRadius: 50 }}>Login</Button>
+                <Button onClick={() => { navigate('/sign') }} variant="contained"  style={{ color: "black", backgroundColor: "#EDD929", borderRadius: 50 }}>Cadastre-se</Button>
             </Box>
         </Box>
 

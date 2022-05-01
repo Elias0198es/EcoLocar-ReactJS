@@ -2,8 +2,9 @@ export const goToHomePage = (history) => {
     history.push("/")
 }
 
-export const goToLoginPage = (history) => {
-    history.push("/login")
+export const goToLoginPage = (navigate) => {
+    navigate("/login")
+    
 }
 
 export const goToSignUpPage = (history) => {

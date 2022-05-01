@@ -202,7 +202,7 @@ const SignupPage = () => {
           onClick={handleSignup}
         />
         <div className='signup-link'>
-          Não tem conta?
+          Já tem conta?
           <strong>
             <Link to="/login">&nbsp;Entre</Link>
           </strong>
