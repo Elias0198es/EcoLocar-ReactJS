@@ -9,7 +9,8 @@ a amazonia seja preservada e reflorestada
 
 ## Demo
 
-📺 Um video curto para mostrar o fluxo da nossa plataforma (link da aoresentação do site)
+📺 Um video curto para mostrar o fluxo da nossa plataforma (link da apresentação do site no Vimeo):
+[Urihi-video](https://vimeo.com/705197438)
 
 ## O que faz
 A Urihi faz a conexão de pessoas e grandes empresas com os donos de imoveis rurais, para a preservação e reflorestamento gerando valor para as empresas através do credito de carbono e na preservação e reflorestamento da Amazônia propriamente dito, esse investimento será distribuído em forma de aluguel para os proprietários, custos de reflorestamento e para o monitoramento das atividades via satélite e varreduras de drones que vão gerar relatórios periódicos.
