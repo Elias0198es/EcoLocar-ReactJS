@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import { useNavigate } from 'react-router-dom';
+import AmazonMap from '../assets/Amazon-google-maps.png'
 
 export default function LabTabs() {
   
@@ -51,6 +52,7 @@ export default function LabTabs() {
                 <Tab label="Home" value="1" />
                 <Tab label="Quem somos" value="2" />
                 <Tab label="Porque alugar" value="3" />
+                <Tab label="Transparência" value="4" />
             </TabList>
 
             <Box sx={{ mr: 3, width: '17vw', display: 'flex', flexDirection: 'row', justifyContent: 'space-between'}}>
@@ -118,6 +120,19 @@ export default function LabTabs() {
                         </Grid>
 
                     </Grid>
+                </Box>
+            </TabPanel>
+
+            <TabPanel value="4">
+                <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                     <Typography variant="h1" component="h2">Transparência</Typography>
+                     <Typography mt={2} paragraph={true} sx={{fontSize: 20}}>
+                        Acompanhe em tempo real a sua area de reflorestamento
+                     </Typography>
+                     <div>
+                        <img style={{ height: '420px', padding: '10px' }}src={AmazonMap} alt="Mapa" />
+                     </div>
+                     <Button onClick={() => { navigate('/login') }} variant="contained"  style={{ color: "black", backgroundColor: "#EDD929", borderRadius: 50 }}>Acompanhe aqui</Button>
                 </Box>
             </TabPanel>
         </Box>

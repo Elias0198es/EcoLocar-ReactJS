@@ -1,17 +1,25 @@
-import { useState } from 'react'
 import Input from '../../components/Input'
 import Button from '../../components/Button'
 import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
 import BannerSignup from '../../assets/Banner.png'
+import React, { useState } from "react";
+import Logo from '../../assets/logo.png'
+import UserIcon from '../../assets/user.png'
+import BannerLogin from '../../assets/Banner.png'
 
 import './sign-up.css'
 
 const SignupPage = () => {
 
+  const { signout } = useAuth()
   const { signup } = useAuth()
+  const { login } = useAuth()
   const navigate = useNavigate()
 
+  const loginNome = JSON.parse(localStorage.getItem('users_bd'))
+
+  const [isLogged, setIsLogged] = useState(false)
   const [nome, setNome] = useState('')
   const [sobrenome, setSobrenome] = useState('')
   const [email, setEmail] = useState('')
@@ -28,10 +36,6 @@ const SignupPage = () => {
   const [error, setError] = useState('')
 
   const handleSignup = () => {
-    // if (!nome | !sobrenome | !cpf | !cnpj | !endereco | !cep | !cidade | !estado | !email | !rg | !password | !passwordConf) {
-    //   setError("Preencha todos os campos corretamente!")
-    //   return
-    // } else if 
     if (password !== passwordConf) {
       setError("As senhas não são iguais")
       return
@@ -48,171 +52,186 @@ const SignupPage = () => {
   }
 
   return (
-    <div className='signup-container'>
-
-      <div className='input-container'>
-        <h2 className='input-title'>Cadastro</h2>
-
-        <div>
-
-          <div className='input-div'>
-            <label>Nome  <strong style={{ color: 'red'}}>*</strong></label>
-            <Input
-              type="text"
-              value={nome}
-              onChange={(e) => [setNome(e.target.value), setError('')]}
-            />
-          </div>
-          <div className='input-div'>
-            <label>Sobrenome  <strong style={{ color: 'red'}}>*</strong></label>
-            <Input
-              type="text"
-              value={sobrenome}
-              onChange={(e) => [setSobrenome(e.target.value), setError('')]}
-            />
-          </div>
-          <div className='input-div'>
-            <label>Gênero  <strong style={{ color: 'red'}}>*</strong></label>
-            <select name="genero">
-              <option value="default" selected>-</option>
-              <option value='nao-binario'>Não-Binário</option>
-              <option value='mulher-cis'>Mulher cisgênero</option>
-              <option value='homem-cis'>Homem cisgênero</option>
-              <option value='homem-trans'>Mulher transgênero</option>
-              <option value='mulher-trans'>Mulher transgênero</option>
-            </select>
-          </div>
-          <div className='input-div'>
-          <p>CPF/CNPJ  <strong style={{ color: 'red'}}>*</strong></p>
-          <Input
-            type="text"
-            required
-            value={isCpf ? cpf : cnpj}
-            onChange={(e) => [isCpf ? setCpf(e.target.value) : setCnpj(e.target.value), setError('')]}
-          />
-          </div>
-          <div className='input-div'>
-          <p>Registro Geral  <strong style={{ color: 'red'}}>*</strong></p>
-          <Input
-            type="text"
-            value={rg}
-            onChange={(e) => [setRg(e.target.value), setError('')]}
-          />
-          </div>
-          <div className='input-div'>
-          <p>Órgão emissor  <strong style={{ color: 'red'}}>*</strong></p>
-          <select name="genero">
-            <option value='default' selected>-</option>
-            <option value='ssp'>SSP</option>
-          </select>
-          </div>
-
-          <div className='input-div-cep'>
-          <p>CEP <strong style={{ color: 'red'}}>*</strong></p>
-          <Input
-            type="text"
-            value={cep}
-            onChange={(e) => [setCep(e.target.value), setError('')]}
-          />
+    <div>
+       <div className="user-header">
+        <div className='logo'>
+        <img src={Logo} alt="Logo" />
         </div>
-
-        <div className='input-div'>
-          <p>Endereço  <strong style={{ color: 'red'}}>*</strong></p>
-          <Input
-            type="text"
-            value={endereco}
-            onChange={(e) => [setEndereco(e.target.value), setError('')]}
-          />
+        {isLogged ? (
+          <div className='user-greeting'>
+            <h1 style={{ paddingRight: '10px' }} >Bem vindo, {loginNome[0].nome}</h1>
+            <img style={{ height: '30px', paddingRight: '10px', paddingLeft: '10px' }} src={UserIcon} alt="" />
+            <button style={{ paddingTop: '10px', paddingBottom: '10px', marginTop: '10px', fontSize: '14px' }} Text="Sair" onClick={() => [signout(), navigate('/')]}>Sair</button>
           </div>
-          <div className='input-div'>
-          <p>Cidade  <strong style={{ color: 'red'}}>*</strong></p>
-          <Input
-            type="text"
-            value={cidade}
-            onChange={(e) => [setCidade(e.target.value), setError('')]}
-          />
-          </div>
-          <div className='input-div'>
-          <p>Estado  <strong style={{ color: 'red'}}>*</strong></p>
-          <select name="estados">
-            <option value="default" selected>-</option>
-            <option value="AC">Acre</option>
-            <option value="AL">Alagoas</option>
-            <option value="AP">Amapá</option>
-            <option value="AM">Amazonas</option>
-            <option value="BA">Bahia</option>
-            <option value="CE">Ceará</option>
-            <option value="DF">Distrito Federal</option>
-            <option value="ES">Espírito Santo</option>
-            <option value="GO">Goías</option>
-            <option value="MA">Maranhão</option>
-            <option value="MT">Mato Grosso</option>
-            <option value="MS">Mato Grosso do Sul</option>
-            <option value="MG">Minas Gerais</option>
-            <option value="PA">Pará</option>
-            <option value="PB">Paraíba</option>
-            <option value="PR">Paraná</option>
-            <option value="PE">Pernambuco</option>
-            <option value="PI">Piauí</option>
-            <option value="RJ">Rio de Janeiro</option>
-            <option value="RN">Rio Grande do Norte</option>
-            <option value="RS">Rio Grande do Sul</option>
-            <option value="RO">Rondônia</option>
-            <option value="RR">Roraíma</option>
-            <option value="SC">Santa Catarina</option>
-            <option value="SP">São Paulo</option>
-            <option value="SE">Sergipe</option>
-            <option value="TO">Tocantins</option>
-          </select>
-          </div>
-          <div className='input-div'>
-          <p>Digite seu e-mail <strong style={{ color: 'red'}}>*</strong></p>
-        <Input
-          type="email"
-          value={email}
-          onChange={(e) => [setEmail(e.target.value), setError('')]}
-        />
-          </div>
-          <div className='input-div'>
-          <p>Digite sua senha  <strong style={{ color: 'red'}}>*</strong></p>
-        <Input
-          type="password"
-          value={password}
-          onChange={(e) => [setPassword(e.target.value), setError('')]}
-        />
-          </div>
-          <div className='input-div'>
-          <p>Confirme sua senha  <strong style={{ color: 'red'}}>*</strong></p>
-        <Input
-          type="password"
-          value={passwordConf}
-          onChange={(e) => [setPasswordConf(e.target.value), setError('')]}
-        />
-        <p className='error'>{error}</p>
-          </div>
-          
-        </div>
-        <label className='checkbox-label'>
-        <input className='checkmark' type="radio"  />
-          Receber ofertas e novidades por e-mail
-        </label>
-        
-        <Button
-          Text="Concluir cadastro"
-          onClick={handleSignup}
-        />
-        <div className='signup-link'>
-          Já tem conta?
-          <strong>
-            <Link to="/login">&nbsp;Entre</Link>
-          </strong>
-        </div>
+        ) : (
+          <button style={{ paddingTop: '10px', paddingBottom: '10px', marginTop: '10px', fontSize: '14px' }} Text="Sair" onClick={() => [signout(), navigate('/')]}>Voltar home</button>
+        )}
       </div>
 
-      <div className='banner-container'>
-        <img src={BannerSignup} alt="banner" />
+      <div className='signup-container'>
+        <div className='input-container'>
+          <h2 className='input-title'>Cadastro</h2>
+          <div>
+            <div className='input-div'>
+              <label>Nome  <strong style={{ color: 'red' }}>*</strong></label>
+              <Input
+                type="text"
+                value={nome}
+                onChange={(e) => [setNome(e.target.value), setError('')]}
+              />
+            </div>
+            <div className='input-div'>
+              <label>Sobrenome  <strong style={{ color: 'red' }}>*</strong></label>
+              <Input
+                type="text"
+                value={sobrenome}
+                onChange={(e) => [setSobrenome(e.target.value), setError('')]}
+              />
+            </div>
+            <div className='input-div'>
+              <label>Gênero  <strong style={{ color: 'red' }}>*</strong></label>
+              <select name="genero">
+                <option value="default" selected>-</option>
+                <option value='nao-binario'>Não-Binário</option>
+                <option value='mulher-cis'>Mulher cisgênero</option>
+                <option value='homem-cis'>Homem cisgênero</option>
+                <option value='homem-trans'>Mulher transgênero</option>
+                <option value='mulher-trans'>Mulher transgênero</option>
+              </select>
+            </div>
+            <div className='input-div'>
+              <p>CPF/CNPJ  <strong style={{ color: 'red' }}>*</strong></p>
+              <Input
+                type="text"
+                required
+                value={isCpf ? cpf : cnpj}
+                onChange={(e) => [isCpf ? setCpf(e.target.value) : setCnpj(e.target.value), setError('')]}
+              />
+            </div>
+            <div className='input-div'>
+              <p>Registro Geral  <strong style={{ color: 'red' }}>*</strong></p>
+              <Input
+                type="text"
+                value={rg}
+                onChange={(e) => [setRg(e.target.value), setError('')]}
+              />
+            </div>
+            <div className='input-div'>
+              <p>Órgão emissor  <strong style={{ color: 'red' }}>*</strong></p>
+              <select name="genero">
+                <option value='default' selected>-</option>
+                <option value='ssp'>SSP</option>
+              </select>
+            </div>
+
+            <div className='input-div-cep'>
+              <p>CEP <strong style={{ color: 'red' }}>*</strong></p>
+              <Input
+                type="text"
+                value={cep}
+                onChange={(e) => [setCep(e.target.value), setError('')]}
+              />
+            </div>
+
+            <div className='input-div'>
+              <p>Endereço  <strong style={{ color: 'red' }}>*</strong></p>
+              <Input
+                type="text"
+                value={endereco}
+                onChange={(e) => [setEndereco(e.target.value), setError('')]}
+              />
+            </div>
+            <div className='input-div'>
+              <p>Cidade  <strong style={{ color: 'red' }}>*</strong></p>
+              <Input
+                type="text"
+                value={cidade}
+                onChange={(e) => [setCidade(e.target.value), setError('')]}
+              />
+            </div>
+            <div className='input-div'>
+              <p>Estado  <strong style={{ color: 'red' }}>*</strong></p>
+              <select name="estados">
+                <option value="default" selected>-</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goías</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraíma</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+              </select>
+            </div>
+            <div className='input-div'>
+              <p>Digite seu e-mail <strong style={{ color: 'red' }}>*</strong></p>
+              <Input
+                type="email"
+                value={email}
+                onChange={(e) => [setEmail(e.target.value), setError('')]}
+              />
+            </div>
+            <div className='input-div'>
+              <p>Digite sua senha  <strong style={{ color: 'red' }}>*</strong></p>
+              <Input
+                type="password"
+                value={password}
+                onChange={(e) => [setPassword(e.target.value), setError('')]}
+              />
+            </div>
+            <div className='input-div'>
+              <p>Confirme sua senha  <strong style={{ color: 'red' }}>*</strong></p>
+              <Input
+                type="password"
+                value={passwordConf}
+                onChange={(e) => [setPasswordConf(e.target.value), setError('')]}
+              />
+              <p className='error'>{error}</p>
+            </div>
+
+          </div>
+          <label className='checkbox-label'>
+            <input className='checkmark' type="radio" />
+            Receber ofertas e novidades por e-mail
+          </label>
+
+          <Button
+            Text="Concluir cadastro"
+            onClick={handleSignup}
+          />
+          <div className='signup-link'>
+            Já tem conta?
+            <strong>
+              <Link to="/login">&nbsp;Entre</Link>
+            </strong>
+          </div>
+        </div>
+
+        <div className='banner-container'>
+          <img src={BannerSignup} alt="banner" />
+        </div>
       </div>
     </div>
+
   );
 };
 

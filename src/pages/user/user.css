@@ -1,0 +1,83 @@
+* {
+    font-family: 'Farro', sans-serif;
+}
+
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to top, #000000c6, #147A2B);
+}
+
+.logo img {
+    margin: 20px;
+    object-fit: cover;
+    height: 60px;
+    background-color: none;
+}
+
+.user-greeting {
+    color: #EDD929;
+    font-style: italic;
+    font-size: 6px;
+    font-weight: lighter;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px;
+}
+
+.graphic-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px;
+    background-color: #147A2B;
+}
+
+.user-area {
+    object-fit: cover;
+    height: 250px;
+    background-color: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #147A2B;
+    padding-top: 40px;
+    padding-right: 30px;
+}
+
+.investment-container {
+    color: #fff;
+    padding: 10px;
+    font-weight: lighter;
+}
+
+.investment-image {
+    object-fit: cover;
+    height: 20px;
+    padding: 10px;
+    background-color: none;
+}
+
+.investment-image img {
+    display: inline;
+    object-fit: cover;
+    height: 25px;
+    background-color: none;
+}
+
+.banner-florest {
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    padding: 80px;
+    background-color: #147A2B;
+}
+
+.banner-florest img {
+    object-fit: cover;
+    height: 450px;
+    background-color: none;
+}
