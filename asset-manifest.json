@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/provi-hack-reactjs/static/css/main.49e24798.css",
+    "main.js": "/provi-hack-reactjs/static/js/main.1e3af0c6.js",
+    "static/media/floresta5.png": "/provi-hack-reactjs/static/media/floresta5.9bd70c6e2e3821d0ca5e.png",
+    "static/media/florest.png": "/provi-hack-reactjs/static/media/florest.a2fff6a1c767ec9273aa.png",
+    "static/media/Banner.png": "/provi-hack-reactjs/static/media/Banner.8305a45bfd1ac8368898.png",
+    "index.html": "/provi-hack-reactjs/index.html",
+    "main.49e24798.css.map": "/provi-hack-reactjs/static/css/main.49e24798.css.map",
+    "main.1e3af0c6.js.map": "/provi-hack-reactjs/static/js/main.1e3af0c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49e24798.css",
+    "static/js/main.1e3af0c6.js"
+  ]
+}
